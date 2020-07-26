@@ -31,5 +31,20 @@ typedef struct int_node
 }INT_NODE;
 
 
+typedef struct int_node_head
+{
+    // lenght of the list
+    long len;
+
+    // a pointer to the first node
+    INT_NODE *first;
+
+    // a pionter to the last node
+    INT_NODE *last;
+
+}INT_NODE_HEAD;
+
+
+
 
 #endif
