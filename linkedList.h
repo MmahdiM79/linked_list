@@ -18,7 +18,17 @@
 #define __LINKEDLIST_H__
 
 
+/* hold an int data */
+typedef struct int_node
+{
+    // value of this node
+    int value;
 
+    // pointers
+    struct int_node *next;
+    struct int_node *previous;
+
+}INT_NODE;
 
 
 
