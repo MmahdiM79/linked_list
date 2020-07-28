@@ -14,6 +14,14 @@
  */
 
 
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+
+
 #ifndef __LINKEDLIST_H__
 #define __LINKEDLIST_H__
 
@@ -45,7 +53,7 @@ typedef struct int_node_head
 }INT_NODE_HEAD;
 
 
-
+/* This function create a new int node with given value and return the pointer of it */
 INT_NODE* new_int_node(int value);
 
 
