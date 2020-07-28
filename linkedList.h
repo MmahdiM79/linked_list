@@ -63,6 +63,9 @@ INT_NODE *new_int_node(int value);
 INT_LIST_HEAD *new_int_list_head();
 
 
+/* This method return 1 if the given the given list, contains the given value. otherwise return 0 */
+int list_contains_int_value(INT_LIST_HEAD *list_head, int value_to_check);
+
 
 
 #endif
