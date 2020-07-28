@@ -4,7 +4,7 @@
  * ==========================================
  * [] File Name:  linkedList.h
  * 
- * [] Creation Date:  26-00-2020
+ * [] Creation Date:  26-07-2020
  * 
  * [] Created By:  Mohammad Mahdi Malmasi (m.mahdi.m79@gmail.com / https://github.com/MmahdiM79)
  * ==========================================
@@ -33,7 +33,7 @@ typedef struct int_node
 
 typedef struct int_node_head
 {
-    // lenght of the list
+    // length of the list
     long len;
 
     // a pointer to the first node
@@ -43,6 +43,10 @@ typedef struct int_node_head
     INT_NODE *last;
 
 }INT_NODE_HEAD;
+
+
+
+INT_NODE* new_int_node(int value);
 
 
 
