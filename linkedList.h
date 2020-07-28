@@ -39,7 +39,7 @@ typedef struct int_node
 }INT_NODE;
 
 
-typedef struct int_node_head
+typedef struct int_list_head
 {
     // length of the list
     long len;
@@ -50,7 +50,7 @@ typedef struct int_node_head
     // a pionter to the last node
     INT_NODE *last;
 
-}INT_NODE_HEAD;
+}INT_LIST_HEAD;
 
 
 
@@ -60,7 +60,7 @@ INT_NODE *new_int_node(int value);
 
 
 /* This function create a new int node head and return the pointer of it */
-INT_NODE_HEAD *new_int_node_head();
+INT_LIST_HEAD *new_int_list_head();
 
 
 
