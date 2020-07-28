@@ -12,3 +12,26 @@
 /*
  *  Copyright ©️  2020  Mohammad Mahdi Malmasi.
  */
+
+
+
+#include "linkedList.h"
+
+
+
+
+
+
+//    *    int node functions    *
+
+
+INT_NODE* new_int_node(int value)
+{
+    // create int node
+    INT_NODE *output = (INT_NODE *) malloc(sizeof(INT_NODE));
+
+    // set value
+    output->value = value;
+
+    return output;
+}
