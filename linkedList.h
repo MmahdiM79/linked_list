@@ -67,6 +67,10 @@ INT_LIST_HEAD *new_int_list_head();
 void add_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_add);
 
 
+/* This function insert the given node at the given index of the list */
+int insert_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_insert, int index);
+
+
 /* This method return 1 if the given the given list, contains the given value. otherwise return 0 */
 int list_contains_int_value(INT_LIST_HEAD *list_head, int value_to_check);
 
