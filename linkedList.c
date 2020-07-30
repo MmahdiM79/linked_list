@@ -42,7 +42,7 @@ INT_NODE *new_int_node(int value)
 }
 
 
-INT_LIST_HEAD *new_int_node_head()
+INT_LIST_HEAD *new_int_list_head() 
 {
     // create a new int node head
     INT_LIST_HEAD *output = (INT_LIST_HEAD *) malloc(sizeof(INT_LIST_HEAD));
@@ -57,3 +57,16 @@ INT_LIST_HEAD *new_int_node_head()
 
     return output;
 } 
+
+
+void add_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_add)
+{
+    // set last node next pointer field
+    list_head->last->next = int_node_to_add;
+
+    // set given node privuos pointer field
+    int_node_to_add->previous = list_head->last;
+
+    // set list head last pinter field
+    list_head->last = int_node_to_add;
+}
