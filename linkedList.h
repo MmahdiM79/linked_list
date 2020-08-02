@@ -18,6 +18,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 
 
@@ -69,6 +70,14 @@ void add_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_add);
 
 /* This function insert the given node at the given index of the list */
 int insert_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_insert, int index);
+
+
+/* 
+ * This function remove the given node from the given list 
+ * If you set the 'free' parametr true, the given node will remove from the memory
+ * (return 1 if every think is ok or return 0 if the given list dose not contain the given node)
+ */
+int remove_int_node(INT_LIST_HEAD *list_head, INT_NODE *node_to_remove, bool free);
 
 
 /* This method return 1 if the given the given list, contains the given value. otherwise return 0 */
