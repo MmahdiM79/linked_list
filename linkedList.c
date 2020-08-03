@@ -170,3 +170,26 @@ int remove_int_node(INT_LIST_HEAD *list_head, INT_NODE *node_to_remove, bool rem
 
     return 1;
 }
+
+
+INT_NODE *remove_node_by_int_value(INT_LIST_HEAD *list_head, int value)
+{
+    // set current node 
+    INT_NODE *curr = list_head->first;
+    
+
+    // iterate on all nodes
+    while (curr != NULL)
+    {
+        // check value
+        if (curr->value == value)
+        {
+            remove_int_node(list_head, curr, false);
+            return curr;
+        }
+        else  
+            curr = curr->next;
+    }
+    
+    return NULL;
+}

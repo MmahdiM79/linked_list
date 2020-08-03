@@ -80,6 +80,13 @@ int insert_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_insert, int 
 int remove_int_node(INT_LIST_HEAD *list_head, INT_NODE *node_to_remove, bool free);
 
 
+/* 
+ * This fuction remove first node that has the same value with given value
+ * (return the removed node or return NULL if there isn't any node with given value) 
+ */
+INT_NODE *remove_node_by_int_value(INT_LIST_HEAD *list_head, int value);
+
+
 /* This method return 1 if the given the given list, contains the given value. otherwise return 0 */
 int list_contains_int_value(INT_LIST_HEAD *list_head, int value_to_check);
 
