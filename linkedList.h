@@ -87,6 +87,10 @@ int remove_int_node(INT_LIST_HEAD *list_head, INT_NODE *node_to_remove, bool fre
 INT_NODE *remove_node_by_int_value(INT_LIST_HEAD *list_head, int value);
 
 
+/* This function apply the given function for all of the list values */
+void apply_to_all_int(INT_LIST_HEAD *list_head, int (*func)(int));
+
+
 /* This method return 1 if the given the given list, contains the given value. otherwise return 0 */
 int list_contains_int_value(INT_LIST_HEAD *list_head, int value_to_check);
 

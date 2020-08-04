@@ -193,3 +193,16 @@ INT_NODE *remove_node_by_int_value(INT_LIST_HEAD *list_head, int value)
     
     return NULL;
 }
+
+
+void apply_to_all_int(INT_LIST_HEAD *list_head, int (*func)(int))
+{
+    // hold current node
+    INT_NODE *curr = list_head->first;
+
+    while (curr != NULL)
+    {
+        curr->value = func(curr->value);
+        curr = curr->next;
+    }
+}
