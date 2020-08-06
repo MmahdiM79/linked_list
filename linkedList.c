@@ -206,3 +206,14 @@ void apply_to_all_int(INT_LIST_HEAD *list_head, int (*func)(int))
         curr = curr->next;
     }
 }
+
+
+int list_contains_int_value(INT_LIST_HEAD *list_head, int value_to_check)
+{
+    for (INT_NODE *curr = list_head->first; curr != NULL; curr = curr->next)
+        if (curr->value == value_to_check)
+            return 1;
+
+    
+    return 0;
+}
