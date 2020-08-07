@@ -124,6 +124,47 @@ int insert_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_insert, int 
 }
 
 
+int get_int_value_at_index(INT_LIST_HEAD *list_head, int index)
+{
+    // check given index
+    if (index < 0 || index > list_head->len-1)
+        return NULL;
+
+
+    // hold the current node
+    INT_NODE *curr;
+
+    if (list_head->len - index > index)
+    {
+        // set the current node
+        curr = list_head->first;
+
+        // set curr to the node at the given index
+        for (int curr_index = 0; curr_index < index; curr_index++)
+            curr = curr->next;
+
+
+        return curr->value;
+    }
+
+    else 
+    {
+        // set the current node
+        curr = list_head->last;
+
+        // set curr to the node at the given index
+        for (int curr_index = list_head->len-1; curr_index > index; curr_index--)
+            curr = curr->previous;
+
+        
+        return curr->value;
+    }
+
+
+    return NULL;
+}
+
+
 int remove_int_node(INT_LIST_HEAD *list_head, INT_NODE *node_to_remove, bool remove)
 {
     // hold the current node

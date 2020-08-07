@@ -72,6 +72,10 @@ void add_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_add);
 int insert_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_insert, int index);
 
 
+/* This method return the value at the given index. return null if your given index is wrong */
+int get_int_value_at_index(INT_LIST_HEAD *list_head, int index);
+
+
 /* 
  * This function remove the given node from the given list 
  * If you set the 'free' parametr true, the given node will remove from the memory
