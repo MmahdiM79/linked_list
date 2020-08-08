@@ -99,5 +99,9 @@ void apply_to_all_int(INT_LIST_HEAD *list_head, int (*func)(int));
 int list_contains_int_value(INT_LIST_HEAD *list_head, int value_to_check);
 
 
+/* This method return a array of given list */
+int *to_int_array(INT_LIST_HEAD *list_head);
+
+
 
 #endif

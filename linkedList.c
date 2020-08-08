@@ -258,3 +258,17 @@ int list_contains_int_value(INT_LIST_HEAD *list_head, int value_to_check)
     
     return 0;
 }
+
+
+int *to_int_array(INT_LIST_HEAD *list_head)
+{
+    // creat output array
+    int output[list_head->len];
+
+    // set output array
+    for (int i = 0; i < list_head->len; i++)
+        output[i] = get_int_value_at_index(list_head, i);
+
+
+    return output;
+}
