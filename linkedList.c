@@ -61,7 +61,7 @@ INT_LIST_HEAD *new_int_list_head()
 
 void add_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_add)
 {
-    if (list_head->len != 0)
+    if (list_head->len > 0)
     {
         // set last node next pointer field
         list_head->last->next = int_node_to_add;
@@ -77,6 +77,10 @@ void add_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_add)
         list_head->first = int_node_to_add;
         list_head->last = int_node_to_add;
     }
+
+
+    // increase length of the list
+    list_head->len++;
 }
 
 
