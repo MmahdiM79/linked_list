@@ -296,3 +296,24 @@ INT_LIST_HEAD *sub_int_list(INT_LIST_HEAD *list_head, int start_index, int end_i
     
     return output;
 }
+
+
+void print_int_list(INT_LIST_HEAD *list_head, bool nextLine)
+{
+    // hold the current node
+    INT_NODE *curr = list_head->first;
+
+
+    printf("[");
+    while (curr != NULL)
+    {
+        printf("%d, ", curr->value);
+        curr = curr->next;
+    }
+    printf("\b\b]");
+    
+
+    // go to next line
+    if (nextLine)
+        printf("\n");
+}
