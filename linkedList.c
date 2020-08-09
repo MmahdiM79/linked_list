@@ -91,6 +91,16 @@ int insert_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_insert, int 
         return 0;
 
 
+    // 0 index insert case
+    if (index == 0)
+    {
+        int_node_to_insert->next = list_head->first;
+        list_head->first->previous = int_node_to_insert;
+        list_head->first = int_node_to_insert;
+
+        return 1;
+    }
+
     // hold the current node
     INT_NODE *curr;
 
