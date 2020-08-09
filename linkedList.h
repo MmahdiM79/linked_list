@@ -103,5 +103,16 @@ int list_contains_int_value(INT_LIST_HEAD *list_head, int value_to_check);
 int *to_int_array(INT_LIST_HEAD *list_head);
 
 
+/*
+ * This function return a sub linkedlist of given linkedlist
+ * example:
+ *      list_head = {2, 3, 5, 8, 1, 100, 30, 7, 9}
+ *      sub_int_list(list_head, 1, 5) returns {3, 5, 8, 1}
+ * 
+ * This function returns NULL if somting wrongs
+ */
+INT_LIST_HEAD *sub_int_list(INT_LIST_HEAD *list_head, int start_index, int end_index);
+
+
 
 #endif

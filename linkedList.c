@@ -272,3 +272,27 @@ int *to_int_array(INT_LIST_HEAD *list_head)
 
     return output;
 }
+
+
+INT_LIST_HEAD *sub_int_list(INT_LIST_HEAD *list_head, int start_index, int end_index)
+{
+    // check given start index
+    if (start_index < 0 || start_index > list_head->len)
+        return NULL;
+
+    // check given end index
+    if (end_index < 0 || end_index > list_head->len)
+        return NULL;
+
+
+    
+    // output list head
+    INT_LIST_HEAD *output = new_int_list_head();
+
+    // set new list
+    for (int i = start_index; i < end_index; i++)
+        add_int_node(output, new_int_node(get_int_value_at_index(list_head, i)));
+
+    
+    return output;
+}
