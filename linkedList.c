@@ -189,46 +189,72 @@ int get_int_value_at_index(INT_LIST_HEAD *list_head, int index)
 
 int remove_int_node(INT_LIST_HEAD *list_head, INT_NODE *node_to_remove, bool remove)
 {
-    // hold the current node
-    INT_NODE *curr = list_head->first;
-
     // check that we find the node or not
     bool find = false;
 
-
-    // go to the previous node of the node that we want to remove it
-    for (int i = 0; i < list_head->len; i++)
+    
+   
+    if (list_head->first == node_to_remove)  // remove first node case
     {
-        // check pointers
-        if (curr->next == node_to_remove)
+        list_head->first = list_head->first->next;
+        list_head->first->previous = NULL;
+
+        find = true; 
+    }
+
+    else if (list_head->last == node_to_remove) // remove last node case
+    {
+        list_head->last = list_head->last->previous;
+        list_head->last->next = NULL;
+
+        find = true;
+    }
+
+    else // other cases
+    {
+        // hold the current node
+        INT_NODE *curr = list_head->first;
+
+
+        // go to the previous node of the node that we want to remove it
+        for (int i = 0; i < list_head->len; i++)
         {
-            find = true;
-            break; 
+            // check pointers
+            if (curr->next == node_to_remove)
+            {
+                find = true;
+                break; 
+            }
+            else  
+                curr = curr->next;
         }
-        else  
-            curr = curr->next;
+    
+
+
+        // check that we find the node in list or not
+        if (!find)
+            return 0;
+
+        
+        // set pointers and remove given node from list
+        curr->next = curr->next->next;
+        curr->next->previous = curr->next->previous->previous;
     }
 
 
-    // check that we find the node in list or not
-    if (!find)
-        return 0;
-
-    
-    // set pointers and remove given node from list
-    curr->next = curr->next->next;
-    curr->next->previous = curr->next->previous->previous;
-    list_head->len--;
-
 
     if (remove) // remove the removed node from memory
-        free(node_to_remove);
+            free(node_to_remove);
 
     else  // cut the access of the node to the list
     {
         node_to_remove->next = NULL;
         node_to_remove->previous = NULL;
     }
+
+
+    // update list len
+    list_head->len--;
 
 
     return 1;
