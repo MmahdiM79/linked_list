@@ -84,6 +84,10 @@ int get_int_value_at_index(INT_LIST_HEAD *list_head, int index);
 int remove_int_node(INT_LIST_HEAD *list_head, INT_NODE *node_to_remove, bool free);
 
 
+/* This function remove all of the nodes and free ram */
+void remove_all_int_list(INT_LIST_HEAD *list_head);
+
+
 /* 
  * This fuction remove first node that has the same value with given value
  * (return the removed node or return NULL if there isn't any node with given value) 

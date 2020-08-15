@@ -261,6 +261,23 @@ int remove_int_node(INT_LIST_HEAD *list_head, INT_NODE *node_to_remove, bool rem
 }
 
 
+void remove_all_int_list(INT_LIST_HEAD *list_head)
+{
+    // hold the current node to remove
+    INT_NODE *curr = list_head->last;
+
+    // removing nodes
+    while (curr != list_head->first)
+    {
+        curr = curr->previous;
+        free(curr->next);
+    }
+
+    // free the first node
+    free(list_head->first);
+}
+
+
 INT_NODE *remove_node_by_int_value(INT_LIST_HEAD *list_head, int value)
 {
     // set current node 
