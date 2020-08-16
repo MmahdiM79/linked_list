@@ -1,6 +1,6 @@
 
 
- /*
+/*
  *                                                   In The Name of God 
  * 
  * ==========================================
@@ -100,8 +100,9 @@ INT_NODE *remove_node_by_int_value(INT_LIST_HEAD *list_head, int value);
 /* 
  * This function remove the node at given index 
  * set 'flush' true if you want to remove the node from RAM
+ * This function returns 1 if every things is ok. otherwise returns 0
  */
-void remove_int_node_at(INT_LIST_HEAD *list_head, int index, bool flush);
+int remove_int_node_at(INT_LIST_HEAD *list_head, int index, bool flush);
 
 
 /* This function removes all of the elements of this collection that satisfy the given function */
