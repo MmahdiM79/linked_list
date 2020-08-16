@@ -335,6 +335,19 @@ int remove_int_node_at(INT_LIST_HEAD *list_head, int index, bool flush)
 }
 
 
+void remove_int_if(INT_LIST_HEAD *list_head, bool (*func)(int))
+{
+    // hold the current node
+    INT_NODE *curr = list_head->first;
+
+
+    // check all nodes
+    for (int i = 0; i < list_head->len; i++)
+        if (func(curr->value))
+            remove_int_node_at(list_head, i, false);
+}
+
+
 void apply_to_all_int(INT_LIST_HEAD *list_head, int (*func)(int))
 {
     // hold current node
