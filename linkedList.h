@@ -1,7 +1,7 @@
-package sample;
 
 
- In The Name of God 
+ /*
+ *                                                   In The Name of God 
  * 
  * ==========================================
  * [] File Name:  linkedList.h
