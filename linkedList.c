@@ -301,6 +301,40 @@ INT_NODE *remove_node_by_int_value(INT_LIST_HEAD *list_head, int value)
 }
 
 
+int remove_int_node_at(INT_LIST_HEAD *list_head, int index, bool flush)
+{
+    // check index
+    if (index < 0 || index > list_head->len-1)
+        return 0;
+
+
+    // hold the current node
+    INT_NODE *curr = list_head->first;
+
+
+    // go to the node that should be removed
+    for (int i = 0; i < index; i++)
+        curr = curr->next;
+
+
+    // set pointers to remove it
+    curr->previous->next = curr->next;
+    curr->next->previous = curr->previous;
+
+
+    // free form ram or not
+    if (flush)
+        free(curr);
+    else 
+    {
+        curr->next = NULL;
+        curr->previous = NULL;
+    }
+
+    return 1;
+}
+
+
 void apply_to_all_int(INT_LIST_HEAD *list_head, int (*func)(int))
 {
     // hold current node
