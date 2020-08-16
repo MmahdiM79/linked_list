@@ -1,5 +1,7 @@
-/*
- *              In The Name of God 
+package sample;
+
+
+ In The Name of God 
  * 
  * ==========================================
  * [] File Name:  linkedList.h
@@ -93,6 +95,17 @@ void remove_all_int_list(INT_LIST_HEAD *list_head);
  * (return the removed node or return NULL if there isn't any node with given value) 
  */
 INT_NODE *remove_node_by_int_value(INT_LIST_HEAD *list_head, int value);
+
+
+/* 
+ * This function remove the node at given index 
+ * set 'flush' true if you want to remove the node from RAM
+ */
+void remove_int_node_at(INT_LIST_HEAD *list_head, int index, bool flush);
+
+
+/* This function removes all of the elements of this collection that satisfy the given function */
+void remove_int_if(INT_LIST_HEAD *list_head, bool (*func)(int));
 
 
 /* This function apply the given function for all of the list values */
