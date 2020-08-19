@@ -138,5 +138,9 @@ INT_LIST_HEAD *sub_int_list(INT_LIST_HEAD *list_head, int start_index, int end_i
 void print_int_list(INT_LIST_HEAD *list_head, bool nextLine);
 
 
+/* This function adds the list_2 nodes to the end of the list_1 nodes */
+void merge_int_lists(INT_LIST_HEAD *list_1, INT_LIST_HEAD *list_2);
+
+
 
 #endif
