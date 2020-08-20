@@ -74,6 +74,13 @@ void add_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_add);
 int insert_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_insert, int index);
 
 
+/* 
+ * This function replaces the int node at the specified position in this list with the specified element 
+ * This method return the older int node
+ */
+INT_NODE *set_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_set, int index);
+
+
 /* This method return the value at the given index. return null if your given index is wrong */
 int get_int_value_at_index(INT_LIST_HEAD *list_head, int index);
 

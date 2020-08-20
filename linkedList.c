@@ -146,6 +146,70 @@ int insert_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_insert, int 
 }
 
 
+INT_NODE *set_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_set, int index)
+{
+    // hold the older int node
+    INT_NODE *olderNode;
+
+
+    // index 0 case
+    if (index == 0)
+    {
+        // set pointers to add new node
+        olderNode = list_head->first;
+        int_node_to_set->next = olderNode->next;
+        int_node_to_set->previous = NULL;
+        olderNode->next->previous = int_node_to_set;
+        list_head->first = int_node_to_set;
+
+        // set old node pointers
+        olderNode->next = olderNode->previous = NULL;
+
+        return olderNode;
+    }
+
+    // last index case
+    if (index == list_head->len)
+    {
+        // set pointers to add new node
+        olderNode = list_head->last;
+        int_node_to_set->previous = olderNode->previous;
+        int_node_to_set->next = NULL;
+        olderNode->previous->next = int_node_to_set;
+        list_head->last = int_node_to_set;
+
+        // set old node pointers
+        olderNode->previous = olderNode->next = NULL;
+
+        return olderNode;
+    }
+
+
+
+    // hold the current node
+    INT_NODE *curr = list_head->first;
+
+
+    // go to the node at the given index
+    for (int i = 0; i < index; i++)
+        curr = curr->next;
+
+
+    // set pointers to add new node
+    int_node_to_set->next = curr->next;
+    int_node_to_set->previous = curr->previous;
+    curr->next->previous = int_node_to_set;
+    curr->previous->next = int_node_to_set;
+    olderNode = curr;
+
+    // set old node pointers
+    olderNode->next = olderNode->previous = NULL;
+
+
+    return olderNode;
+}
+
+
 int get_int_value_at_index(INT_LIST_HEAD *list_head, int index)
 {
     // check given index
