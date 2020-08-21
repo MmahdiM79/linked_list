@@ -210,6 +210,28 @@ INT_NODE *set_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_set, int 
 }
 
 
+int set_int_node_value(INT_LIST_HEAD *list_head, int index, int new_value)
+{
+    // check the given index
+    if (index < 0 || index > list_head->len-1)
+        return -1;
+
+        
+    // hold the current node
+    INT_NODE *curr = list_head->first;
+
+    // go to the given index
+    for (int i = 0; i < index; i++)
+        curr = curr->next;
+
+    // set value
+    curr->value = new_value;
+
+    
+    return 0;
+}
+
+
 int get_int_value_at_index(INT_LIST_HEAD *list_head, int index)
 {
     // check given index
