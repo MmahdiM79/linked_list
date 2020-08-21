@@ -76,7 +76,7 @@ int insert_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_insert, int 
 
 /* 
  * This function replaces the int node at the specified position in this list with the specified element 
- * This method return the older int node
+ * This function return the older int node
  */
 INT_NODE *set_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_set, int index);
 
@@ -88,7 +88,7 @@ INT_NODE *set_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_set, int 
 int set_int_node_value(INT_LIST_HEAD *list_head, int index, int new_value);
 
 
-/* This method return the value at the given index. return null if your given index is wrong */
+/* This function return the value at the given index. return null if your given index is wrong */
 int get_int_value_at_index(INT_LIST_HEAD *list_head, int index);
 
 
@@ -127,11 +127,11 @@ void remove_int_if(INT_LIST_HEAD *list_head, bool (*func)(int));
 void apply_to_all_int(INT_LIST_HEAD *list_head, int (*func)(int));
 
 
-/* This method return 1 if the given the given list, contains the given value. otherwise return 0 */
+/* This function return 1 if the given the given list, contains the given value. otherwise return 0 */
 int list_contains_int_value(INT_LIST_HEAD *list_head, int value_to_check);
 
 
-/* This method return a array of given list */
+/* This function return a array of given list */
 int *to_int_array(INT_LIST_HEAD *list_head);
 
 
