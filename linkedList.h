@@ -146,7 +146,8 @@ int *to_int_array(INT_LIST_HEAD *list_head);
 INT_LIST_HEAD *sub_int_list(INT_LIST_HEAD *list_head, int start_index, int end_index);
 
 
-/* This function print the given list in terminal. 
+/* 
+ * This function print the given list in terminal. 
  * Set nextLine true for going next line after print the list 
  */
 void print_int_list(INT_LIST_HEAD *list_head, bool nextLine);
