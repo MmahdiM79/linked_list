@@ -156,5 +156,12 @@ void print_int_list(INT_LIST_HEAD *list_head, bool nextLine);
 void merge_int_lists(INT_LIST_HEAD *list_1, INT_LIST_HEAD *list_2);
 
 
+/* 
+ * This function returns 'true' if the given function returns 'true' at least for one of the int nodes values
+ * otherwise returns 'false'
+ */
+bool any_int_value(INT_LIST_HEAD *list_head, bool (*func)(int));
+
+
 
 #endif

@@ -526,4 +526,24 @@ void merge_int_lists(INT_LIST_HEAD *list_1, INT_LIST_HEAD *list_2)
 }
 
 
+bool any_int_value(INT_LIST_HEAD *list_head, bool (*func)(int))
+{
+    // hold the current node
+    INT_NODE *curr = list_head->first;
+
+
+    // check all nodes
+    while (curr != NULL)
+    {
+        if (func(curr->value) == true)
+            return true;
+
+        curr = curr->next;
+    }
+    
+
+    return false;
+}
+
+
 // =========================================================================================================================
