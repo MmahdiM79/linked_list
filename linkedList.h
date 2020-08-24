@@ -164,5 +164,12 @@ void merge_int_lists(INT_LIST_HEAD *list_1, INT_LIST_HEAD *list_2);
 bool any_int_value(INT_LIST_HEAD *list_head, bool (*func)(int));
 
 
+/*
+ * This function returns 'true' if the given function returns true for all of the int values of this list
+ * otherwise returns 'false'
+ */
+bool all_int_values(INT_LIST_HEAD *list_head, bool (*func)(int));
+
+
 
 #endif
