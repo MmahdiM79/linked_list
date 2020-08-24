@@ -546,4 +546,24 @@ bool any_int_value(INT_LIST_HEAD *list_head, bool (*func)(int))
 }
 
 
+bool all_int_values(INT_LIST_HEAD *list_head, bool (*func)(int))
+{
+    // hold the current node
+    INT_NODE *curr = list_head->first;
+
+
+    // check all nodes
+    while (curr != NULL)
+    {
+        if (func(curr->value) == false)
+            return false;
+
+        curr = curr->next;
+    }
+    
+
+    return true;
+}
+
+
 // =========================================================================================================================
