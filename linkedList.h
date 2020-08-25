@@ -171,5 +171,9 @@ bool any_int_value(INT_LIST_HEAD *list_head, bool (*func)(int));
 bool all_int_values(INT_LIST_HEAD *list_head, bool (*func)(int));
 
 
+/* This function reverse the given list */
+void reverse_int_list(INT_LIST_HEAD *list_head);
+
+
 
 #endif
