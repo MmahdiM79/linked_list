@@ -566,4 +566,28 @@ bool all_int_values(INT_LIST_HEAD *list_head, bool (*func)(int))
 }
 
 
+void reverse_int_list(INT_LIST_HEAD *list_head)
+{
+    // hold nodes for swaping
+    INT_NODE *currFirst = list_head->first;
+    INT_NODE *currLast = list_head->last;
+
+    // hold the value for swaping
+    int hold;
+
+
+    // swaping
+    while (currFirst != currLast)
+    {
+        hold = currFirst->value;
+        currFirst->value = currLast->value;
+        currLast->value = hold;
+
+
+        currFirst = currFirst->next;
+        currLast = currLast->previous;
+    }
+}
+
+
 // =========================================================================================================================
