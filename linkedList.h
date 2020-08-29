@@ -58,6 +58,8 @@ typedef struct int_list_head
 
 }INT_LIST_HEAD;
 
+#define ilh INT_LIST_HEAD *
+
 
 
 
