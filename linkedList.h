@@ -44,6 +44,8 @@ typedef struct int_node
 
 }INT_NODE;
 
+#define iNode INT_NODE *
+
 
 typedef struct int_list_head
 {
