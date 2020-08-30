@@ -34,5 +34,19 @@ int main(int n, char *args[])
 
 
 
+    //      *  add int nodes to the int list head  *
+
+    // we use add_int_node(INT_LIST_HEAD, INT_NODE) function,
+    // to add the int nodes to the list
+    add_int_node(head, intNode);
+    add_int_node(h, ind);
+
+    // you can easily create and add a int node to the list in one line
+    add_int_node(head, new_int_node(1));
+
+
+
+    
+
     return 0; 
 }
