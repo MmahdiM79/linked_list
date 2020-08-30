@@ -46,6 +46,17 @@ int main(int n, char *args[])
 
 
 
+    //      *  print an int list  *
+
+    // with print_int_list(INT_LIST_HEAD, bool) you can print your list in standard output(terminal)
+    // set the seccond parametr 'true' if you want to go to the next line after printing the list
+    printf("'head' linked list nodes:  ");
+    print_int_list(head, true);
+
+
+
+
+
     
 
     return 0; 
