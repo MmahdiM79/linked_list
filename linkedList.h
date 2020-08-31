@@ -34,6 +34,20 @@
 
 
 
+//      *  micros  *
+
+// this micro raise an error with given message
+#define raiseERROR(x) printf(#x"\n"); exit(EXIT_FAILURE);
+
+
+
+
+
+
+
+
+
+
 
 
 /*      =================================== int node part ===================================       */
@@ -50,8 +64,7 @@ typedef struct int_node
     struct int_node *previous;
 
 }INT_NODE;
-
-#define iNode INT_NODE *
+#define iNode INT_NODE * // a easiest way to make a pointer to the int node
 
 
 typedef struct int_list_head
@@ -66,8 +79,7 @@ typedef struct int_list_head
     INT_NODE *last;
 
 }INT_LIST_HEAD;
-
-#define ilh INT_LIST_HEAD *
+#define ilh INT_LIST_HEAD * // a easiest way to make a pointer to the int list head
 
 
 
