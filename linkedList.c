@@ -100,6 +100,9 @@ void insert_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_insert, int
         raiseERROR(the given index is out of range);
 
 
+    // increase the len of the list
+    list_head->len++;
+
 
     // 0 index insert case
     if (index == 0)
@@ -107,6 +110,8 @@ void insert_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_insert, int
         int_node_to_insert->next = list_head->first;
         list_head->first->previous = int_node_to_insert;
         list_head->first = int_node_to_insert;
+
+        return;
     }
 
 
