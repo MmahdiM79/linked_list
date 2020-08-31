@@ -27,17 +27,23 @@
 
 
 
-
 #ifndef __LINKEDLIST_H__
 #define __LINKEDLIST_H__
 
 
 
 
-//      *  micros  *
+
+
+
+
+//      *  micros and global defines  *
 
 // this micro raise an error with given message
-#define raiseERROR(x) {printf("\n\x1b[31m \berror:  \x1b[0m"#x"\n\n"); exit(EXIT_FAILURE);}
+#define raiseERROR(x) {printf("\n\x1b[31m \berror:  \x1b[0m"#x"\n\n\n"); exit(EXIT_FAILURE);}
+
+// null pointer error massage
+#define NULL_POINTER_ERROR() raiseERROR(some of the given pointers are NULL);
 
 
 
