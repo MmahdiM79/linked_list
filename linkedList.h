@@ -37,7 +37,7 @@
 //      *  micros  *
 
 // this micro raise an error with given message
-#define raiseERROR(x) printf(#x"\n"); exit(EXIT_FAILURE);
+#define raiseERROR(x) {printf("\x1b[31m \berror:  \x1b[0m"#x"\n"); exit(EXIT_FAILURE);}
 
 
 
