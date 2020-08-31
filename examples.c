@@ -50,14 +50,35 @@ int main(int n, char *args[])
 
     // with print_int_list(INT_LIST_HEAD, bool) you can print your list in standard output(terminal)
     // set the seccond parametr 'true' if you want to go to the next line after printing the list
-    printf("'head' linked list nodes:  ");
+    printf("\n'head' linked list nodes:  ");
     print_int_list(head, true);
+    printf("\n\n\n\n\n");
 
 
 
+    //      *  insert an int node  *
 
+    // you can also add a new int node to the middle of the list
+    // for this, we use insert_int_node(INT_LIST_HEAD, INT_NODE, int)
+    // make sure that your given index is in this range: (0, list len)
+    // see the examples:
 
+    // befor insert
+    printf("'head' linked list nodes befor insert new node:  ");print_int_list(head, true);
+    // insert the node
+    insert_int_node(head, new_int_node(2), 0);
+    // now see the result
+    printf("'head' linked list nodes after insert a new node at index 0:  ");print_int_list(head, true);
+
+    // another example
+    insert_int_node(head, new_int_node(3), 1);
+    printf("'head' linked list nodesafter insert a new node at index 1:  ");print_int_list(head, true);
+    printf("\n\n\n\n\n");
     
+    
+
+
+
 
     return 0; 
 }
