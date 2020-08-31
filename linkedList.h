@@ -103,7 +103,7 @@ void add_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_add);
 
 
 /* This function insert the given node at the given index of the list */
-int insert_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_insert, int index);
+void insert_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_insert, int index);
 
 
 /* 

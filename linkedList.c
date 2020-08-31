@@ -89,11 +89,16 @@ void add_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_add)
 }
 
 
-int insert_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_insert, int index)
+void insert_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_insert, int index)
 {
+    // check the given pointers
+    if (list_head == NULL || int_node_to_insert == NULL)
+        NULL_POINTER_ERROR();
+
     // check given index
     if (index-1 > list_head->len || index < 0)
-        return 0;
+        raiseERROR(the given index is out of range);
+
 
 
     // 0 index insert case
@@ -102,9 +107,8 @@ int insert_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_insert, int 
         int_node_to_insert->next = list_head->first;
         list_head->first->previous = int_node_to_insert;
         list_head->first = int_node_to_insert;
-
-        return 1;
     }
+
 
     // hold the current node
     INT_NODE *curr;
@@ -124,10 +128,7 @@ int insert_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_insert, int 
         int_node_to_insert->previous = curr->previous;
         curr->previous->next = int_node_to_insert;
         curr->previous = int_node_to_insert;
-
-        return 1;
     }
-
     else 
     {
         // set the current node
@@ -143,11 +144,7 @@ int insert_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_insert, int 
         int_node_to_insert->previous = curr->previous;
         curr->previous->next = int_node_to_insert;
         curr->previous = int_node_to_insert;
-
-        return 1;
     }
-
-    return 0;
 }
 
 
