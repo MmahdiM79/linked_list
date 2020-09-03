@@ -72,9 +72,26 @@ int main(int n, char *args[])
 
     // another example
     insert_int_node(head, new_int_node(3), 1);
-    printf("'head' linked list nodesafter insert a new node at index 1:  ");print_int_list(head, true);
+    printf("'head' linked list nodes after insert a new node at index 1:  ");print_int_list(head, true);
     printf("\n\n\n\n\n");
     
+
+
+    //      *  set a int node at a index  *
+
+    // you can replace an int node in your list
+    // for this, we use set_int_node(INT_LIST_HEAD *, INT_NODE *, int)
+    // this function returns the older int node after replace the given node
+    // see examples:
+
+    // befor set a new int node
+    printf("'head' linked list nodes befor set new node:  ");print_int_list(head, true);
+    // set an int node to index 0 and hold the function output
+    iNode hold = set_int_node(head, new_int_node(4), 0);
+    // now check the list
+    printf("'head' linked list after set a new int node at index 0:  "); print_int_list(head, true);
+    // now set the value of the node that set function returned
+    printf("value of int node which set_int_node returns it:  %d\n", hold->value);
     
 
 
