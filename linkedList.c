@@ -22,6 +22,18 @@
 
 
 
+//      ====================================   *   general functions   *   =====================================
+
+void checkIndex(long index, long list_len)
+{
+    if (index < 0 || index > list_len-1)
+        INDEX_OUT_OF_RANGE();
+}
+
+
+
+
+
 //    *    int node functions    *
 
 
