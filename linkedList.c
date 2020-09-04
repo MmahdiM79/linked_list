@@ -538,6 +538,11 @@ INT_LIST_HEAD *sub_int_list(INT_LIST_HEAD *list_head, int start_index, int end_i
 
 void print_int_list(INT_LIST_HEAD *list_head, bool nextLine)
 {
+    // check pointers
+    checkNullPointer(list_head);
+
+
+    
     // hold the current node
     INT_NODE *curr = list_head->first;
 
