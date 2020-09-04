@@ -27,8 +27,21 @@
 void checkIndex(long index, long list_len)
 {
     if (index < 0 || index > list_len-1)
-        INDEX_OUT_OF_RANGE();
+        INDEX_OUT_OF_RANGE_ERROR();
 }
+
+void checkNullPointer(void *pointer)
+{
+    if (pointer == NULL)
+        NULL_POINTER_ERROR();
+}
+
+//      ========================================================================================================
+
+
+
+
+
 
 
 
