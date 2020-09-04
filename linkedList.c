@@ -179,6 +179,15 @@ void insert_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_insert, int
 
 INT_NODE *set_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_set, int index)
 {
+    // check pointers
+    checkNullPointer(list_head);
+    checkNullPointer(int_node_to_set);
+
+    // check index
+    checkIndex(index, list_head->len);
+
+
+    
     // hold the older int node
     INT_NODE *olderNode;
 
