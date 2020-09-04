@@ -46,7 +46,7 @@
 #define NULL_POINTER_ERROR() raiseERROR(some of the given pointers are NULL);
 
 // index out of range error message
-#define INDEX_OUT_OF_RANGE() raiseERROR(given index is out of range);
+#define INDEX_OUT_OF_RANGE_ERROR() raiseERROR(given index is out of range);
 
 
 
