@@ -117,12 +117,11 @@ void add_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_add)
 void insert_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_insert, int index)
 {
     // check the given pointers
-    if (list_head == NULL || int_node_to_insert == NULL)
-        NULL_POINTER_ERROR();
+    checkNullPointer(list_head);
+    checkNullPointer(int_node_to_insert);
 
     // check given index
-    if (index-1 > list_head->len || index < 0)
-        INDEX_OUT_OF_RANGE();
+    checkIndex(index, list_head->len);
 
 
     // increase the len of the list
