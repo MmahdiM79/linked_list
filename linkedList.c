@@ -97,7 +97,7 @@ void insert_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_insert, int
 
     // check given index
     if (index-1 > list_head->len || index < 0)
-        raiseERROR(the given index is out of range);
+        INDEX_OUT_OF_RANGE();
 
 
     // increase the len of the list
