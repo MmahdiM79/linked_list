@@ -42,8 +42,11 @@
 // this micro raise an error with given message
 #define raiseERROR(x) {printf("\n\x1b[31m \berror:  \x1b[0m"#x"\n\n\n"); exit(EXIT_FAILURE);}
 
-// null pointer error massage
+// null pointer error message
 #define NULL_POINTER_ERROR() raiseERROR(some of the given pointers are NULL);
+
+// index out of range error message
+#define INDEX_OUT_OF_RANGE() raiseERROR(given index is out of range);
 
 
 
