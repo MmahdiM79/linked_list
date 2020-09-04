@@ -87,8 +87,8 @@ INT_LIST_HEAD *new_int_list_head()
 void add_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_add)
 {
     // check given parameteres
-    if (list_head == NULL || int_node_to_add == NULL)
-        raiseERROR(some of the given pointers are NULL);
+    checkNullPointer(list_head);
+    checkNullPointer(int_node_to_add);
 
 
     if (list_head->len > 0)
