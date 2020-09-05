@@ -69,8 +69,8 @@ typedef struct __int_node__
     int value;
 
     // pointers
-    struct int_node *next;
-    struct int_node *previous;
+    struct __int_node__ *next;
+    struct __int_node__ *previous;
 
 }INT_NODE;
 #define iNode INT_NODE * // a easiest way to make a pointer to the int node
