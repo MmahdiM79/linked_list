@@ -8,6 +8,8 @@ int main(int n, char *args[])
     /*              =============  int node functions ============              */
 
 
+
+
     //      *  create a new int list head  *
 
     // for each int list you need a list head
@@ -18,6 +20,7 @@ int main(int n, char *args[])
     // there is a easiest way to make a pointer of INT_LIST_HEAD
     // for this we used a defined string
     ilh h = new_int_list_head();
+
 
 
 
@@ -34,6 +37,7 @@ int main(int n, char *args[])
 
 
 
+
     //      *  add int nodes to the int list head  *
 
     // we use add_int_node(INT_LIST_HEAD *, INT_NODE *) function,
@@ -46,6 +50,7 @@ int main(int n, char *args[])
 
 
 
+
     //      *  print an int list  *
 
     // with print_int_list(INT_LIST_HEAD *, bool) you can print your list in standard output(terminal)
@@ -53,6 +58,7 @@ int main(int n, char *args[])
     printf("\n'head' linked list nodes:  ");
     print_int_list(head, true);
     printf("\n\n\n\n\n");
+
 
 
 
@@ -77,6 +83,7 @@ int main(int n, char *args[])
     
 
 
+
     //      *  set a int node at a index  *
 
     // you can replace an int node in your list
@@ -92,6 +99,29 @@ int main(int n, char *args[])
     printf("'head' linked list after set a new int node at index 0:  "); print_int_list(head, true);
     // now set the value of the node that set function returned
     printf("value of int node which set_int_node returns it:  %d\n", hold->value);
+    printf("\n\n\n\n\n");
+
+
+
+
+    //      *  set value of an int node  *
+
+    // some times, you don't need to replace an int node.
+    // only you need to change the value of it
+    // for example in arrays you do this like this: array[7] = 7;
+    // you can change the value of an int node by set_int_node_value(INT_LIST_HEAD *, int, int) function
+    // see example:
+
+    // befor change value of the int node
+    printf("'head' linked list befor change the value of the int node at index 0:  "); print_int_list(head, true);
+    // change the value
+    set_int_node_value(head, 0, 40);
+    // now see the result
+    printf("'head' linked list after change the value of the int node at index 0:  "); print_int_list(head, true);
+    printf("\n\n\n\n\n");
+    
+
+
     
 
 
