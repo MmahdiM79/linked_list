@@ -214,7 +214,7 @@ INT_NODE *set_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_set, int 
     }
 
     // last index case
-    if (index == list_head->len)
+    if (index == list_head->len-1)
     {
         // set pointers to add new node
         olderNode = list_head->last;
