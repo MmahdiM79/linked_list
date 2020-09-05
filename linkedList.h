@@ -120,7 +120,7 @@ INT_NODE *set_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_set, int 
  * This function set the given value to the node at the given index.
  * returns 0 if every things is ok or -1 if some your given index is invalid
  */
-int set_int_node_value(INT_LIST_HEAD *list_head, int index, int new_value);
+void set_int_node_value(INT_LIST_HEAD *list_head, int index, int new_value);
 
 
 /* This function return the value at the given index. return null if your given index is wrong */
