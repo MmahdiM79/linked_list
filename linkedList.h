@@ -63,7 +63,7 @@
 
 
 /* hold an int data */
-typedef struct int_node
+typedef struct __int_node__
 {
     // value of this node
     int value;
@@ -76,7 +76,7 @@ typedef struct int_node
 #define iNode INT_NODE * // a easiest way to make a pointer to the int node
 
 
-typedef struct int_list_head
+typedef struct __int_list_head__
 {
     // length of the list
     long len;
