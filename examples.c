@@ -25,7 +25,7 @@ int main(int n, char *args[])
 
     // now you need some int nodes for your list
     // you need the pointer of int nodes to add them to the list
-    // for this we use new_int_node(value) function
+    // for this we use new_int_node(int) function
     INT_NODE *intNode = new_int_node(0);
 
     // like INT_LIST_HEAD, 
@@ -36,7 +36,7 @@ int main(int n, char *args[])
 
     //      *  add int nodes to the int list head  *
 
-    // we use add_int_node(INT_LIST_HEAD, INT_NODE) function,
+    // we use add_int_node(INT_LIST_HEAD *, INT_NODE *) function,
     // to add the int nodes to the list
     add_int_node(head, intNode);
     add_int_node(h, ind);
@@ -48,7 +48,7 @@ int main(int n, char *args[])
 
     //      *  print an int list  *
 
-    // with print_int_list(INT_LIST_HEAD, bool) you can print your list in standard output(terminal)
+    // with print_int_list(INT_LIST_HEAD *, bool) you can print your list in standard output(terminal)
     // set the seccond parametr 'true' if you want to go to the next line after printing the list
     printf("\n'head' linked list nodes:  ");
     print_int_list(head, true);
@@ -59,7 +59,7 @@ int main(int n, char *args[])
     //      *  insert an int node  *
 
     // you can also add a new int node to the middle of the list
-    // for this, we use insert_int_node(INT_LIST_HEAD, INT_NODE, int)
+    // for this, we use insert_int_node(INT_LIST_HEAD *, INT_NODE *, int)
     // make sure that your given index is in this range: (0, list len)
     // see the examples:
 
