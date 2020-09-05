@@ -257,9 +257,12 @@ INT_NODE *set_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_set, int 
 
 int set_int_node_value(INT_LIST_HEAD *list_head, int index, int new_value)
 {
+    // check pointers
+    checkNullPointer(list_head);
+
     // check the given index
-    if (index < 0 || index > list_head->len-1)
-        return -1;
+    checkIndex(index, list_head->len);
+    
 
         
     // hold the current node
