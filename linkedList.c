@@ -372,7 +372,7 @@ void remove_int_node(INT_LIST_HEAD *list_head, INT_NODE *node_to_remove, bool fl
 
         // check that we find the node in list or not
         if (!find)
-            return 0;
+            raiseERROR(the given int node is not available in given linked list);
 
         
         // set pointers and remove given node from list
@@ -394,9 +394,6 @@ void remove_int_node(INT_LIST_HEAD *list_head, INT_NODE *node_to_remove, bool fl
 
     // update list len
     list_head->len--;
-
-
-    return 1;
 }
 
 
