@@ -323,6 +323,11 @@ int get_int_value_at_index(INT_LIST_HEAD *list_head, int index)
 
 void remove_int_node(INT_LIST_HEAD *list_head, INT_NODE *node_to_remove, bool flush)
 {
+    // check pointers
+    checkNullPointer(list_head);
+    checkNullPointer(node_to_remove);
+
+    
     // check that we find the node or not
     bool find = false;
 
