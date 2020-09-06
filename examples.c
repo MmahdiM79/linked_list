@@ -128,11 +128,36 @@ int main(int n, char *args[])
     // we save the data to use them later
     // in arrays, we can access the value with this syntax: int a = array[7];
     // you can read the value of a specific int node by get_int_value_at_index(INT_LIST_HEAD *, int) function
+    // this function returns NULL if someting went wrongs
     // see example:
 
     printf("'head' linked list:  "); print_int_list(head, true);
     printf("value of int node at index 2:  %d\n", get_int_value_at_index(head, 2));
     printf("\n\n\n\n\n");
+
+
+
+
+    //      *  remove an int node from a list  *
+
+    // sometimes we don't need an int node in your list anymore
+    // if you have pointer of that int node, you can easily remove it from list.
+    // for this we use remove_int_node(INT_LIST_HEAD *, INT_NODE *, bool) function
+    // if you set the last parameter 'true', that int node also will remove from the RAM
+    // see example:
+
+    // first we create a new int node
+    iNode holdToRemove = new_int_node(5);
+    // insert in to the list
+    insert_int_node(head, holdToRemove, 2);
+    // check the list
+    printf("'head' list after insert the new int node at index 2:  "); print_int_list(head, true);
+    // now we remove it from the list
+    remove_int_node(head, holdToRemove, true);
+    // and now check whats happend
+    printf("'head' list after remove the added int node:  "); print_int_list(head, true);
+    printf("\n\n\n\n\n");
+
 
 
 
