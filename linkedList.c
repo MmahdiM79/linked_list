@@ -383,10 +383,7 @@ void remove_int_node(INT_LIST_HEAD *list_head, INT_NODE *node_to_remove, bool fl
 
 
     if (flush) // remove the removed node from memory
-    {
             free(node_to_remove);
-            node_to_remove = NULL;
-    }
 
     else  // cut the access of the node to the list
     {
