@@ -161,6 +161,22 @@ int main(int n, char *args[])
 
 
 
+    //      *  clear a linked list (remove all nodes)  *
+
+    // somtimes you need to clear all int nodes of a list
+    // for this, you can use remove_all_int_list(INT_LIST_HEAD *)
+    // just remember that this function also will remove all int nodes from RAM
+    // see example:
+
+    // head list befor remove all int nodes
+    printf("'head' linked list befor clear it:  ");print_int_list(head, true);
+    // clear it
+    remove_all_int_list(head);
+    // now see what happend
+    printf("'head' linked list after clear it:  ");print_int_list(head, true);
+
+
+
     
 
 
