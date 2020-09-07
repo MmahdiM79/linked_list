@@ -169,11 +169,12 @@ int main(int n, char *args[])
     // see example:
 
     // head list befor remove all int nodes
-    printf("'head' linked list befor clear it:  ");print_int_list(head, true);
+    printf("'head' linked list befor clear it:  "); print_int_list(head, true);
     // clear it
     remove_all_int_list(head);
     // now see what happend
-    printf("'head' linked list after clear it:  ");print_int_list(head, true);
+    printf("'head' linked list after clear it:  "); print_int_list(head, true);
+    printf("\n\n\n\n\n");
 
 
 
@@ -188,6 +189,27 @@ int main(int n, char *args[])
     add_int_node(head, new_int_node(5));
     add_int_node(head, new_int_node(6));
     add_int_node(head, new_int_node(7));
+
+
+
+
+    //      *  remove an int node by its value  *
+
+    // you can remove an int node by its value
+    // it's very use full when you don't have the pointer of it
+    // for this, you can use remove_node_by_int_value(INT_LIST_HEAD *, int) function
+    // this function remove the first int node that has the same value with your given value
+    // see example:
+
+    // first add another node with value 7
+    add_int_node(head, new_int_node(7));
+    // check the linked list
+    printf("'head' linked list befor remove int node with value 7:  "); print_int_list(head, true);
+    // remove int node
+    remove_node_by_int_value(head, 7);
+    // check the linked list
+    printf("'head' linked list after remove int node with value 7:  "); print_int_list(head, true);
+    printf("\n\n\n\n\n");
 
 
     
