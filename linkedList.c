@@ -408,6 +408,12 @@ void remove_all_int_list(INT_LIST_HEAD *list_head)
 
     // free the first node
     free(list_head->first);
+
+
+    // set head pointers and length
+    list_head->last = NULL;
+    list_head->first = NULL;
+    list_head->len = 0;
 }
 
 
