@@ -177,6 +177,19 @@ int main(int n, char *args[])
 
 
 
+
+
+    // add some int nodes for other functions examples
+    add_int_node(head, new_int_node(0));
+    add_int_node(head, new_int_node(1));
+    add_int_node(head, new_int_node(2));
+    add_int_node(head, new_int_node(3));
+    add_int_node(head, new_int_node(4));
+    add_int_node(head, new_int_node(5));
+    add_int_node(head, new_int_node(6));
+    add_int_node(head, new_int_node(7));
+
+
     
 
 
