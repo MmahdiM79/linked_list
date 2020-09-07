@@ -453,7 +453,7 @@ INT_NODE *remove_int_node_at(INT_LIST_HEAD *list_head, int index, bool flush)
    // check index
    checkIndex(index, list_head->len);
 
-   
+
 
 
     // hold the current node
@@ -476,11 +476,12 @@ INT_NODE *remove_int_node_at(INT_LIST_HEAD *list_head, int index, bool flush)
         free(curr);
         return NULL;
     }
-    else 
-    {
-        curr->next = NULL;
-        curr->previous = NULL;
-    }
+    
+    // else 
+    curr->next = NULL;
+    curr->previous = NULL;
+
+
 
     return curr;
 }
