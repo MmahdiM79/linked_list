@@ -199,6 +199,7 @@ int main(int n, char *args[])
     // it's very use full when you don't have the pointer of it
     // for this, you can use remove_node_by_int_value(INT_LIST_HEAD *, int) function
     // this function remove the first int node that has the same value with your given value
+    // if function not find the given value in list, it returns NULL
     // see example:
 
     // first add another node with value 7
