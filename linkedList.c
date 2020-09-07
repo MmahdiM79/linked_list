@@ -476,6 +476,7 @@ INT_NODE *remove_int_node_at(INT_LIST_HEAD *list_head, int index, bool flush)
 
     else  // other cases
     {
+        printf("gghh\n");
         // go to the node that should be removed
         for (int i = 0; i < index; i++)
             output = output->next;
@@ -500,6 +501,9 @@ INT_NODE *remove_int_node_at(INT_LIST_HEAD *list_head, int index, bool flush)
     output->next = NULL;
     output->previous = NULL;
 
+
+    // increase length of the linked list
+    list_head->len--;
 
 
     return output;
