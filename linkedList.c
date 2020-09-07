@@ -476,10 +476,22 @@ INT_NODE *remove_int_node_at(INT_LIST_HEAD *list_head, int index, bool flush)
 
     else  // other cases
     {
-        printf("gghh\n");
-        // go to the node that should be removed
-        for (int i = 0; i < index; i++)
-            output = output->next;
+        if (index < (list_head->len)/2)
+        {
+            output = list_head->first;
+
+            // go to the node that should be removed
+            for (int i = 0; i < index; i++)
+                output = output->next;
+        }
+        else
+        {
+            output = list_head->last;
+
+            // go to the node that should be removed
+            for (int i = list_head->len-1; i > index; i--)
+                output = output->previous;
+        } 
 
 
         // set pointers to remove it
@@ -487,6 +499,10 @@ INT_NODE *remove_int_node_at(INT_LIST_HEAD *list_head, int index, bool flush)
         output->next->previous = output->previous;
     }
 
+
+
+    // increase length of the linked list
+    list_head->len--;
 
 
 
@@ -500,10 +516,6 @@ INT_NODE *remove_int_node_at(INT_LIST_HEAD *list_head, int index, bool flush)
     // else 
     output->next = NULL;
     output->previous = NULL;
-
-
-    // increase length of the linked list
-    list_head->len--;
 
 
     return output;
