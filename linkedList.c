@@ -554,6 +554,18 @@ void print_int_list(INT_LIST_HEAD *list_head, bool nextLine)
     // check pointers
     checkNullPointer(list_head);
 
+    
+    // empty list case
+    if (list_head->len == 0)
+    {
+        printf("[]");
+        
+        if (nextLine)
+            printf("\n");
+
+        return;
+    }
+
 
     
     // hold the current node
