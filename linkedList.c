@@ -419,6 +419,11 @@ void remove_all_int_list(INT_LIST_HEAD *list_head)
 
 INT_NODE *remove_node_by_int_value(INT_LIST_HEAD *list_head, int value)
 {
+    // check pointer
+    checkNullPointer(list_head);
+
+
+    
     // set current node 
     INT_NODE *curr = list_head->first;
     
