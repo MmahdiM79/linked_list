@@ -423,7 +423,7 @@ INT_NODE *remove_node_by_int_value(INT_LIST_HEAD *list_head, int value)
     checkNullPointer(list_head);
 
 
-    
+
     // set current node 
     INT_NODE *curr = list_head->first;
     
@@ -445,7 +445,7 @@ INT_NODE *remove_node_by_int_value(INT_LIST_HEAD *list_head, int value)
 }
 
 
-int remove_int_node_at(INT_LIST_HEAD *list_head, int index, bool flush)
+INT_NODE *remove_int_node_at(INT_LIST_HEAD *list_head, int index, bool flush)
 {
     // check index
     if (index < 0 || index > list_head->len-1 || list_head == NULL)
@@ -468,14 +468,17 @@ int remove_int_node_at(INT_LIST_HEAD *list_head, int index, bool flush)
 
     // free form ram or not
     if (flush)
+    {
         free(curr);
+        return NULL;
+    }
     else 
     {
         curr->next = NULL;
         curr->previous = NULL;
     }
 
-    return 1;
+    return curr;
 }
 
 
