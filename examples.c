@@ -193,6 +193,7 @@ int main(int n, char *args[])
 
 
 
+
     //      *  remove an int node by its value  *
 
     // you can remove an int node by its value
@@ -211,6 +212,30 @@ int main(int n, char *args[])
     // check the linked list
     printf("'head' linked list after remove int node with value 7:  "); print_int_list(head, true);
     printf("\n\n\n\n\n");
+
+
+
+
+    //      *  remove an int node at a specific index  *
+
+    // you can also remove an int node by its index
+    // for this, you can use remove_int_node_at(INT_LIST_HEAD *, int, bool) function
+    // if you want also remove it from RAM, set the last parameter 'true'
+    // this function returns the removed int node
+    // if you set the last parameter true, it returns NULL
+    // see example:
+
+    // befor removing
+    printf("'head' linked list befor remove int node at index 5:  "); print_int_list(head, true);
+    // remove int node at index 5 and hold it
+    iNode holdToCheck = remove_int_node_at(head, 5, false);
+    // after removing
+    printf("'head' linked list after remove int node at index 5:  "); print_int_list(head, true);
+    // see the value of removed int node
+    printf("value of int node that function returned:  %d\n", holdToCheck->value);
+    printf("\n\n\n\n\n");
+
+
 
 
     
