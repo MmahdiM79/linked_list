@@ -447,9 +447,13 @@ INT_NODE *remove_node_by_int_value(INT_LIST_HEAD *list_head, int value)
 
 INT_NODE *remove_int_node_at(INT_LIST_HEAD *list_head, int index, bool flush)
 {
-    // check index
-    if (index < 0 || index > list_head->len-1 || list_head == NULL)
-        return 0;
+   // check pointer
+   checkNullPointer(list_head);
+
+   // check index
+   checkIndex(index, list_head->len);
+
+   
 
 
     // hold the current node
