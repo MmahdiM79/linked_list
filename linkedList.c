@@ -456,34 +456,53 @@ INT_NODE *remove_int_node_at(INT_LIST_HEAD *list_head, int index, bool flush)
 
 
 
-    // hold the current node
-    INT_NODE *curr = list_head->first;
+    // hold the int node that we want removed it
+    INT_NODE *output;
 
 
-    // go to the node that should be removed
-    for (int i = 0; i < index; i++)
-        curr = curr->next;
+    if (index == 0) // first int node case
+    {
+        output = list_head->first;
+        list_head->first = list_head->first->next;
+        list_head->first->previous = NULL;
+    }
+
+    else if (index == list_head->len-1) // last int node case
+    {
+        output = list_head->last;
+        list_head->last = list_head->last->previous;
+        list_head->last->next = NULL;
+    }
+
+    else  // other cases
+    {
+        // go to the node that should be removed
+        for (int i = 0; i < index; i++)
+            output = output->next;
 
 
-    // set pointers to remove it
-    curr->previous->next = curr->next;
-    curr->next->previous = curr->previous;
+        // set pointers to remove it
+        output->previous->next = output->next;
+        output->next->previous = output->previous;
+    }
+
+
 
 
     // free form ram or not
     if (flush)
     {
-        free(curr);
+        free(output);
         return NULL;
     }
     
     // else 
-    curr->next = NULL;
-    curr->previous = NULL;
+    output->next = NULL;
+    output->previous = NULL;
 
 
 
-    return curr;
+    return output;
 }
 
 
