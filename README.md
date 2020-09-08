@@ -1,114 +1,46 @@
-<p align="center">
-  <a href="" rel="noopener">
- <img width=200px height=200px src="https://i.imgur.com/6wj0hh6.jpg" alt="Project logo"></a>
-</p>
+# Linked List library for C
 
-<h3 align="center">Project Title</h3>
 
-<div align="center">
+linked list is a very use full data structure. if you don't know what it is, checkout this [link](https://en.wikipedia.org/wiki/Linked_list) 
 
-[![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
-</div>
 
----
+## Installation
 
-<p align="center"> Few lines describing your project.
-    <br> 
-</p>
+Just download [linkedList.h](https://github.com/MmahdiM79/linked_list/blob/master/linkedList.h) and [linkedList.c](https://github.com/MmahdiM79/linked_list/blob/master/linkedList.c) and put them next to your main file (in a same directory).
 
-## 📝 Table of Contents
 
-- [About](#about)
-- [Getting Started](#getting_started)
-- [Deployment](#deployment)
-- [Usage](#usage)
-- [Built Using](#built_using)
-- [TODO](../TODO.md)
-- [Contributing](../CONTRIBUTING.md)
-- [Authors](#authors)
-- [Acknowledgments](#acknowledgement)
 
-## 🧐 About <a name = "about"></a>
+## Usage
 
-Write about 1-2 paragraphs describing the purpose of your project.
-
-## 🏁 Getting Started <a name = "getting_started"></a>
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
-
-### Prerequisites
-
-What things you need to install the software and how to install them.
-
-```
-Give examples
+include linkedList.h in your main file:
+```c
+#include "linkedList.h"
 ```
 
-### Installing
-
-A step by step series of examples that tell you how to get a development env running.
-
-Say what the step will be
-
-```
-Give the example
+compile your file like this:
+```bash
+$ gcc -o out main.c linkedList.c
 ```
 
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo.
-
-## 🔧 Running the tests <a name = "tests"></a>
-
-Explain how to run the automated tests for this system.
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
+and the run your project:
+```bash
+$ ./out
 ```
 
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
+in widows just use this:
+```cmd
+> out
 ```
 
-## 🎈 Usage <a name="usage"></a>
 
-Add notes about how to use the system.
 
-## 🚀 Deployment <a name = "deployment"></a>
+you can find useful examples for how each function works in [examples.c](https://github.com/MmahdiM79/linked_list/blob/master/examples.c)
 
-Add additional notes about how to deploy this on a live system.
 
-## ⛏️ Built Using <a name = "built_using"></a>
 
-- [MongoDB](https://www.mongodb.com/) - Database
-- [Express](https://expressjs.com/) - Server Framework
-- [VueJs](https://vuejs.org/) - Web Framework
-- [NodeJs](https://nodejs.org/en/) - Server Environment
+### bugs and problems
 
-## ✍️ Authors <a name = "authors"></a>
+if you find any bug in functions, please fork this repository and make a function in examples.c file
+and write some comments about bug that you found. Thanks ;)
 
-- [@kylelobo](https://github.com/kylelobo) - Idea & Initial work
-
-See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors) who participated in this project.
-
-## 🎉 Acknowledgements <a name = "acknowledgement"></a>
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- References
