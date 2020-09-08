@@ -460,11 +460,18 @@ INT_NODE *remove_int_node_at(INT_LIST_HEAD *list_head, int index, bool flush)
     INT_NODE *output;
 
 
-    if (index == 0) // first int node case
+    if (index == 0 && list_head->len != 1) // first int node case
     {
         output = list_head->first;
         list_head->first = list_head->first->next;
         list_head->first->previous = NULL;
+    }
+
+    else if (index == 0 && list_head->len == 1) // only one node case
+    {
+        output = list_head->first;
+        list_head->first = NULL;
+        list_head->last = NULL;
     }
 
     else if (index == list_head->len-1) // last int node case
