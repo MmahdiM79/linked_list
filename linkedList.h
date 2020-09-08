@@ -153,8 +153,11 @@ INT_NODE *remove_node_by_int_value(INT_LIST_HEAD *list_head, int value);
 INT_NODE *remove_int_node_at(INT_LIST_HEAD *list_head, int index, bool flush);
 
 
-/* This function removes all of the elements of this collection that satisfy the given function */
-void remove_int_if(INT_LIST_HEAD *list_head, bool (*func)(int));
+/* 
+ * This function removes all of the elements of this collection that satisfy the given function 
+ * This function returns the number of removed int nodes
+ */
+long remove_int_if(INT_LIST_HEAD *list_head, bool (*func)(int));
 
 
 /* This function apply the given function for all of the list values */

@@ -522,16 +522,16 @@ INT_NODE *remove_int_node_at(INT_LIST_HEAD *list_head, int index, bool flush)
 }
 
 
-void remove_int_if(INT_LIST_HEAD *list_head, bool (*func)(int))
+long remove_int_if(INT_LIST_HEAD *list_head, bool (*func)(int))
 {
     // check pointers
     checkNullPointer(list_head);
     checkNullPointer(func);
 
 
-    
-    // hold the current node
-    INT_NODE *curr = list_head->first;
+
+    // hold the number of removed int nodes
+    long numberOfRemovedNodes = 0;
 
 
     // check all nodes
@@ -539,8 +539,12 @@ void remove_int_if(INT_LIST_HEAD *list_head, bool (*func)(int))
         if (func(get_int_value_at_index(list_head, i)))
         {
             remove_int_node_at(list_head, i, false);
+            numberOfRemovedNodes++;
             i--;
         }
+
+
+    return numberOfRemovedNodes;
 }
 
 
