@@ -524,6 +524,12 @@ INT_NODE *remove_int_node_at(INT_LIST_HEAD *list_head, int index, bool flush)
 
 void remove_int_if(INT_LIST_HEAD *list_head, bool (*func)(int))
 {
+    // check pointers
+    checkNullPointer(list_head);
+    checkNullPointer(func);
+
+
+    
     // hold the current node
     INT_NODE *curr = list_head->first;
 
