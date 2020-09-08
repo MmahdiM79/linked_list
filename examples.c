@@ -2,6 +2,9 @@
 
 
 
+bool isEven(int number);
+
+
 
 int main(int n, char *args[])
 {
@@ -238,10 +241,49 @@ int main(int n, char *args[])
 
 
 
+    //      *  remove if has condition  *
+
+    // you can remove int nodes that has a specific condition
+    // for this, you can use remove_int_if(INT_LIST_HEAD *, bool (*)(int)) function
+    // you should write a function that takes an int and returns true if that int value has the condition
+    // then when you call remove_int_if function, get the pointer of your written function to it
+    // this function returns the number of removed int nodes
+    // see example:
+
+    // see the list befor removing
+    printf("'head' linked list befor remove Even nodes:  "); print_int_list(head, true);
+    
+    // we have a function which named isEven
+    // this function returns true if tne given value is an Even number
+    // now removing Even numbers from the list
+    remove_int_if(head, isEven);
+
+    // now see the result
+    printf("'head' linked list after remove Even numbers:  "); print_int_list(head, true);
+    printf("\n\n\n\n\n");
+
+
+
+
     
 
 
 
 
     return 0; 
+}
+
+
+
+
+
+
+
+
+
+
+
+bool isEven(int number)
+{
+    return (number%2 == 0);
 }
