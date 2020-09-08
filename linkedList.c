@@ -530,8 +530,11 @@ void remove_int_if(INT_LIST_HEAD *list_head, bool (*func)(int))
 
     // check all nodes
     for (int i = 0; i < list_head->len; i++)
-        if (func(curr->value))
+        if (func(get_int_value_at_index(list_head, i)))
+        {
             remove_int_node_at(list_head, i, false);
+            i--;
+        }
 }
 
 
