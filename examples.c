@@ -3,6 +3,7 @@
 
 
 bool isEven(int number);
+int NUMx3(int number);
 
 
 
@@ -265,6 +266,30 @@ int main(int n, char *args[])
 
 
 
+    //      *  apply to all int node values  *
+
+    // some times we need to do a same thing with all of the linked list values
+    // for example, multiply all the values by 3
+    // you can use apply_to_all_int(INT_LIST_HEAD *, int (*)(int)) function to do it
+    // you should write a function that takes an int value and do what you want with it and returns the new value
+    // then call the apply_to_all_function and get the pointer of your written function to it
+    // see the example:
+
+    // see the list befor removing
+    printf("'head' linked list befor multiply all the valuse by 3:  "); print_int_list(head, true);
+
+    // we have a function which named NUMx3
+    // this function returns (your given number) * 3
+    // now multipling all the values by 3
+    apply_to_all_int(head, NUMx3);
+
+    // now see the result
+    printf("'head' linked list after multiply all the valuse by 3:  "); print_int_list(head, true);
+    printf("\n\n\n\n\n");
+
+
+
+
     
 
 
@@ -286,4 +311,9 @@ int main(int n, char *args[])
 bool isEven(int number)
 {
     return (number%2 == 0);
+}
+
+int NUMx3(int number)
+{
+    return number * 3;
 }
