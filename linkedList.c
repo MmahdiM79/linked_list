@@ -557,6 +557,11 @@ long remove_int_if(INT_LIST_HEAD *list_head, bool (*func)(int))
 
 void apply_to_all_int(INT_LIST_HEAD *list_head, int (*func)(int))
 {
+    // check pointers
+    checkNullPointer(list_head);
+    checkNullPointer(func);
+
+    
     // hold current node
     INT_NODE *curr = list_head->first;
 
