@@ -313,6 +313,7 @@ bool isEven(int number)
     return (number%2 == 0);
 }
 
+// used for apply_to_all_int function example
 int NUMx3(int number)
 {
     return number * 3;
