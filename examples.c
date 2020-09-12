@@ -307,7 +307,7 @@ int main(int n, char *args[])
 
 
 
-
+// used for remove_int_if function example
 bool isEven(int number)
 {
     return (number%2 == 0);
