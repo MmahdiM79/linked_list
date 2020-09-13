@@ -573,14 +573,19 @@ void apply_to_all_int(INT_LIST_HEAD *list_head, int (*func)(int))
 }
 
 
-int list_contains_int_value(INT_LIST_HEAD *list_head, int value_to_check)
+bool list_contains_int_value(INT_LIST_HEAD *list_head, int value_to_check)
 {
+    // check the given pointer
+    checkNullPointer(list_head);
+
+
+    // check values of given linked list
     for (INT_NODE *curr = list_head->first; curr != NULL; curr = curr->next)
         if (curr->value == value_to_check)
-            return 1;
+            return true;
 
     
-    return 0;
+    return false;
 }
 
 
