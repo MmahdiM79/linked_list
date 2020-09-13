@@ -290,6 +290,24 @@ int main(int n, char *args[])
 
 
 
+    //      *  check a specific value  *
+
+    // if you need to check that your list contains a specific value,
+    // you can easily use list_contains_int_value(INT_LIST_HEAD *, int)
+    // this function returns true if your given list contains your given value
+    // otherwise returns false
+    // see example:
+
+    // see the 'head' linked list
+    printf("'head' linked list:  "); print_int_list(head, true);
+    // check that linked list contains 7
+    printf("is 'head' linked list contains 7 (1 means true and 0 means false):  %d\n", list_contains_int_value(head, 7));
+    // check that linked list contains 9
+    printf("is 'head' linked list contains 9 (1 means true and 0 means false):  %d\n", list_contains_int_value(head, 9));
+    printf("\n\n\n\n\n");
+
+
+
     
 
 
