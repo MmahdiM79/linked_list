@@ -164,8 +164,8 @@ long remove_int_if(INT_LIST_HEAD *list_head, bool (*func)(int));
 void apply_to_all_int(INT_LIST_HEAD *list_head, int (*func)(int));
 
 
-/* This function return 1 if the given the given list, contains the given value. otherwise return 0 */
-int list_contains_int_value(INT_LIST_HEAD *list_head, int value_to_check);
+/* This function returns 'true' if the given list, contains the given value. otherwise return 'false' */
+bool list_contains_int_value(INT_LIST_HEAD *list_head, int value_to_check);
 
 
 /* This function return a array of given list */
