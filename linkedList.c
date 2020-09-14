@@ -47,6 +47,8 @@ void checkNullPointer(void *pointer)
 
 
 
+
+
 //    *    int node functions    *
 
 
