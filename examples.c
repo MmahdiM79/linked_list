@@ -329,6 +329,26 @@ int main(int n, char *args[])
     printf("\b\b}\n");
     printf("\n\n\n\n\n");
 
+
+
+
+    //      *  create a sub linked list  *
+
+    // you need a sublist from your linked list?
+    // just create a new 'INT_LIST_HEAD *' and use
+    // sub_int_list(INT_LIST_HEAD *, int, int) function
+    // first int is start index and the seccond int is end index
+    // see example:
+
+    // create a sub list from 'head' linked list
+    h = sub_int_list(head, 0, 2);
+    // see 'head' linked list
+    printf("'head' linked list:  "); print_int_list(head, true);
+    // see 'h' linked list
+    printf("a sub list from 'head' linked list. index 0 to 2:  "); print_int_list(h, true);
+    printf("\n\n\n\n\n");
+    
+
     
 
 
