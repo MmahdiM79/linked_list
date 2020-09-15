@@ -607,13 +607,15 @@ int *to_int_array(INT_LIST_HEAD *list_head)
 
 INT_LIST_HEAD *sub_int_list(INT_LIST_HEAD *list_head, int start_index, int end_index)
 {
-    // check given start index
-    if (start_index < 0 || start_index > list_head->len)
-        return NULL;
+    // check pointer
+    checkNullPointer(list_head);
 
-    // check given end index
-    if (end_index < 0 || end_index > list_head->len)
-        return NULL;
+    // check given indexes
+    checkIndex(start_index, list_head->len);
+    checkIndex(end_index, list_head->len);
+    if (end_index < start_index)
+        raiseERROR(end_index is les than start_index);
+        
 
 
     
