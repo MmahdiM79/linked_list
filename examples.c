@@ -308,6 +308,27 @@ int main(int n, char *args[])
 
 
 
+
+    //      *  make an array from a linked list  *
+
+    // if you want an array from your current linked list,
+    // you can easily use to_int_array(INT_LIST_HEAD *) function
+    // see example:
+
+    // see the 'head' linked list
+    printf("'head' linked list:  "); print_int_list(head, true);
+
+    // make an array from it
+    int *headArray = to_int_array(head);
+    int headArraySize = head->len;
+
+    // print array
+    printf("the made array from 'head' linked list:  {");
+    for (int i = 0; i < headArraySize; i++)
+        printf("%d, ", headArray[i]);
+    printf("\b\b}\n");
+    printf("\n\n\n\n\n");
+
     
 
 
