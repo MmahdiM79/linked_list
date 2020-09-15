@@ -614,8 +614,8 @@ INT_LIST_HEAD *sub_int_list(INT_LIST_HEAD *list_head, int start_index, int end_i
     checkIndex(start_index, list_head->len);
     checkIndex(end_index, list_head->len);
     if (end_index < start_index)
-        raiseERROR(end_index is les than start_index);
-        
+        raiseERROR(end index is less than start index);
+
 
 
     
