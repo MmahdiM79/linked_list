@@ -347,6 +347,28 @@ int main(int n, char *args[])
     // see 'h' linked list
     printf("a sub list from 'head' linked list. index 0 to 2:  "); print_int_list(h, true);
     printf("\n\n\n\n\n");
+
+
+
+
+    //      *  merge 2 linked list  *
+
+    // you can merge 2 linked list
+    // its mean to add a linked list at the end of the an other linked list
+    // you can do this with merge_int_lists(INT_LIST_HEAD *, INT_LIST_HEAD *) function
+    // see example:
+
+    // 'head' linked list befor merging
+    printf("'head' linked list befor merging with 'h' linked list:  "); print_int_list(head, true);
+    // 'head' linked list befor merging
+    printf("'h' linked list befor merging:  "); print_int_list(h, true);
+    // merge two linked list
+    merge_int_lists(head, h);
+    // 'head' linked list after merging
+    printf("'head' linked list after merging with 'h' linked list:  "); print_int_list(head, true);
+    // 'head' linked list after merging
+    printf("'h' linked list after merging:  "); print_int_list(h, true);
+
     
 
     
