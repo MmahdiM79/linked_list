@@ -677,7 +677,7 @@ void merge_int_lists(INT_LIST_HEAD *list_1, INT_LIST_HEAD *list_2)
     checkNullPointer(list_1);
     checkNullPointer(list_2);
 
-    
+
     list_1->last->next = list_2->first;
     list_2->first->previous = list_1->last;
 
@@ -687,6 +687,12 @@ void merge_int_lists(INT_LIST_HEAD *list_1, INT_LIST_HEAD *list_2)
 
 bool any_int_value(INT_LIST_HEAD *list_head, bool (*func)(int))
 {
+    // check pointers
+    checkNullPointer(list_head);
+    checkNullPointer(func);
+
+
+    
     // hold the current node
     INT_NODE *curr = list_head->first;
 
