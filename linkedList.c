@@ -673,6 +673,11 @@ void print_int_list(INT_LIST_HEAD *list_head, bool nextLine)
 
 void merge_int_lists(INT_LIST_HEAD *list_1, INT_LIST_HEAD *list_2)
 {
+    // check pointers
+    checkNullPointer(list_1);
+    checkNullPointer(list_2);
+
+    
     list_1->last->next = list_2->first;
     list_2->first->previous = list_1->last;
 
