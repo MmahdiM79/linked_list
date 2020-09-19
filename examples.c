@@ -28,6 +28,7 @@
 
 bool isEven(int number);
 int NUMx3(int number);
+bool isLessThan10(int number);
 
 
 
@@ -392,6 +393,30 @@ int main(int n, char *args[])
     printf("'head' linked list after merging with 'h' linked list:  "); print_int_list(head, true);
     // 'head' linked list after merging
     printf("'h' linked list after merging:  "); print_int_list(h, true);
+    printf("\n\n\n\n\n");
+
+
+
+
+
+    //      *  any int value function  *
+
+    // this function is very use full to check the values of a linked list
+    // any_int_value(INT_LIST_HEAD *, bool (*)(int))
+    // this function returns true if at least one of the linked list values, 
+    // establish the condition of the given function
+    // see example:
+
+    // see the 'head' linked list
+    printf("'head' linked list:  "); print_int_list(head, true);
+    // we have a function which named 'isLessThan10'
+    // this function returns true if the given int value,
+    // is less than 10
+    // now we pass it to any_int_value function
+    // and see the output
+    printf("is any of the 'head' linked list values is less than 10? (1 means true and 0 means false):  %d\n",
+            any_int_value(head, isLessThan10));
+    printf("\n\n\n\n\n");
 
     
 
@@ -422,4 +447,10 @@ bool isEven(int number)
 int NUMx3(int number)
 {
     return number * 3;
+}
+
+// used for any_int_value function example
+bool isLessThan10(int number)
+{
+    return number < 10;
 }
