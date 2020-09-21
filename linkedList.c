@@ -594,7 +594,7 @@ bool list_contains_int_value(INT_LIST_HEAD *list_head, int value_to_check)
 int *to_int_array(INT_LIST_HEAD *list_head)
 {
     // creat output array
-    int output[list_head->len];
+    int *output = (int *) malloc((list_head->len)*sizeof(int));
 
     // set output array
     for (int i = 0; i < list_head->len; i++)
