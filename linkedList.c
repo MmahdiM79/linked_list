@@ -594,10 +594,10 @@ bool list_contains_int_value(INT_LIST_HEAD *list_head, int value_to_check)
 int *to_int_array(INT_LIST_HEAD *list_head)
 {
     // check pointer
-    checkNullPointer(list_head)
+    checkNullPointer(list_head);
 
 
-    
+
     // creat output array
     int *output = (int *) malloc((list_head->len)*sizeof(int));
 
