@@ -319,7 +319,7 @@ int get_int_value_at_index(INT_LIST_HEAD *list_head, int index)
     }
 
 
-    return NULL;
+    return 0;
 }
 
 
@@ -718,7 +718,7 @@ bool all_int_values(INT_LIST_HEAD *list_head, bool (*func)(int))
     checkNullPointer(func);
 
 
-    
+
     // hold the current node
     INT_NODE *curr = list_head->first;
 
