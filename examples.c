@@ -29,6 +29,7 @@
 bool isEven(int number);
 int NUMx3(int number);
 bool isLessThan10(int number);
+bool isMoreThan0(int number);
 
 
 
@@ -418,6 +419,27 @@ int main(int n, char *args[])
             any_int_value(head, isLessThan10));
     printf("\n\n\n\n\n");
 
+
+
+
+    //      *  all int values function  *
+
+    // this function is very use full to check all of the values of a linked list
+    // all_int_values(INT_LIST_HEAD *, bool (*)(int))
+    // this function returns true if all of the linked list values, 
+    // establish the condition of the given function
+    // see example:
+
+    // see the 'head' linked list
+    printf("'head' linked list:  "); print_int_list(head, true);
+    // we have a function which named 'isMoreThan0'
+    // this function returns true if the given int value,
+    // is more than 0
+    // now we pass it to all_int_values function
+    // and see the output
+    printf("is all of the 'head' linked list values is more than 0? (1 means true and 0 means false):  %d\n",
+            all_int_values(head, isMoreThan0));
+    printf("\n\n\n\n\n");
     
 
     
@@ -453,4 +475,10 @@ int NUMx3(int number)
 bool isLessThan10(int number)
 {
     return number < 10;
+}
+
+// used for all_int_values function
+bool isMoreThan0(int number)
+{
+    return number > 0;
 }
