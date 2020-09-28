@@ -744,6 +744,11 @@ bool all_int_values(INT_LIST_HEAD *list_head, bool (*func)(int))
 
 void reverse_int_list(INT_LIST_HEAD *list_head)
 {
+    // check the given pointer
+    checkNullPointer(list_head);
+
+
+
     // hold nodes for swaping
     INT_NODE *currFirst = list_head->first;
     INT_NODE *currLast = list_head->last;
@@ -753,7 +758,7 @@ void reverse_int_list(INT_LIST_HEAD *list_head)
 
 
     // swaping
-    while (currFirst != currLast)
+    for (int i = 0; i < (list_head->len)/2; i++)
     {
         hold = currFirst->value;
         currFirst->value = currLast->value;
