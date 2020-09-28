@@ -367,11 +367,11 @@ int main(int n, char *args[])
     // see example:
 
     // create a sub list from 'head' linked list
-    h = sub_int_list(head, 0, 2);
+    h = sub_int_list(head, 0, 3);
     // see 'head' linked list
     printf("'head' linked list:  "); print_int_list(head, true);
     // see 'h' linked list
-    printf("a sub list from 'head' linked list. index 0 to 2:  "); print_int_list(h, true);
+    printf("a sub list from 'head' linked list. index 0 to 3:  "); print_int_list(h, true);
     printf("\n\n\n\n\n");
 
 
@@ -440,6 +440,23 @@ int main(int n, char *args[])
     printf("is all of the 'head' linked list values is more than 0? (1 means true and 0 means false):  %d\n",
             all_int_values(head, isMoreThan0));
     printf("\n\n\n\n\n");
+
+
+
+
+    //      *  reverse your list  *
+
+    // you can reverse your list very easily by following function:
+    // reverse_int_list(INT_LIST_HEAD *)
+    // see example:
+
+    // 'head' linked list befor reversing
+    printf("'head' linked list befor reversing:  "); print_int_list(head, true);
+    // reverse linked list 
+    reverse_int_list(head);
+    // 'head' linked list after reversing
+    printf("'head' linked list after reversing:  "); print_int_list(head, true);
+
     
 
     
