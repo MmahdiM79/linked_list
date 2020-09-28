@@ -456,6 +456,7 @@ int main(int n, char *args[])
     reverse_int_list(head);
     // 'head' linked list after reversing
     printf("'head' linked list after reversing:  "); print_int_list(head, true);
+    printf("\n\n\n\n\n");
 
     
 
