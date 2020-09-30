@@ -42,5 +42,9 @@ you can find useful examples for how each function works in [examples.c](https:/
 ### bugs and problems
 
 if you find any bug in functions, please fork this repository and make a function in examples.c file
-and write some comments about bug that you found and put the code of your case in it. Thanks ;)
+and write some comments about bug that you found and put the code of your case in it. Thanks 
+
+
+## versions
+version 1 coming soon ...
 
