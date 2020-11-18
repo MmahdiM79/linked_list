@@ -323,6 +323,38 @@ int get_int_value_at_index(INT_LIST_HEAD *list_head, int index)
 }
 
 
+INT_NODE *get_int_node_at_index(INT_LIST_HEAD *list_head, int index)
+{
+    // check given pointer
+    checkNullPointer(list_head);
+
+    // check given index
+    checkIndex(index, list_head->len);
+
+
+
+    INT_NODE *curr;
+
+    if (list_head->len - index > index)
+    {
+        curr = list_head->first;
+
+        for (int i = 0; i < index; i++)
+            curr = curr->next;
+    }
+    else 
+    {
+        curr = list_head->last;
+
+        for (int i = list_head->len; i > index; i--)
+            curr = curr->previous;
+    }
+
+
+    return curr;
+}
+
+
 void remove_int_node(INT_LIST_HEAD *list_head, INT_NODE *node_to_remove, bool flush)
 {
     // check pointers
