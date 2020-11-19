@@ -346,7 +346,7 @@ INT_NODE *get_int_node_at_index(INT_LIST_HEAD *list_head, int index)
     {
         curr = list_head->last;
 
-        for (int i = list_head->len; i > index; i--)
+        for (int i = list_head->len-1; i > index; i--)
             curr = curr->previous;
     }
 
