@@ -157,12 +157,12 @@ int main(int n, char *args[])
 
     // we save the data to use them later
     // in arrays, we can access the value with this syntax: int a = array[7];
-    // you can read the value of a specific int node by get_int_value_at_index(INT_LIST_HEAD *, int) function
+    // you can read the value of a specific int node by get_int_value_at(INT_LIST_HEAD *, int) function
     // this function returns NULL if someting went wrongs
     // see example:
 
     printf("'head' linked list:  "); print_int_list(head, true);
-    printf("value of int node at index 2:  %d\n", get_int_value_at_index(head, 2));
+    printf("value of int node at index 2:  %d\n", get_int_value_at(head, 2));
     printf("\n\n\n\n\n");
 
 
