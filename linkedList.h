@@ -124,7 +124,7 @@ void set_int_node_value(INT_LIST_HEAD *list_head, int index, int new_value);
 
 
 /* This function return the value at the given index. return null if your given index is wrong */
-int get_int_value_at_index(INT_LIST_HEAD *list_head, int index);
+int get_int_value_at(INT_LIST_HEAD *list_head, int index);
 
 
 /* This function returns the node at given index */
