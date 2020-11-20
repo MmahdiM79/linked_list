@@ -323,7 +323,7 @@ int get_int_value_at(INT_LIST_HEAD *list_head, int index)
 }
 
 
-INT_NODE *get_int_node_at_index(INT_LIST_HEAD *list_head, int index)
+INT_NODE *get_int_node_at(INT_LIST_HEAD *list_head, int index)
 {
     // check given pointer
     checkNullPointer(list_head);
