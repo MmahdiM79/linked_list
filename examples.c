@@ -168,6 +168,22 @@ int main(int n, char *args[])
 
 
 
+    //      *  get a node at a specific index  *
+
+    // if you want the pointer of a node at a specific index,
+    // use get_int_node_at(INT_LIST_HEAD *, int)
+    // make sure that your given index is correct
+    // and the given pointer isn't NULL
+    // see example:
+
+    printf("'head' linked list:  "); print_int_list(head, true);
+    printf("pionter of node at index 1:  %p\n", get_int_node_at(head, 1));
+    printf("value of this node:  %d\n", get_int_node_at(head, 1)->value);
+    printf("\n\n\n\n\n");
+
+
+
+
     //      *  remove an int node from a list  *
 
     // sometimes we don't need an int node in your list anymore
