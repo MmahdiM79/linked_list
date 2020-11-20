@@ -279,7 +279,7 @@ void set_int_node_value(INT_LIST_HEAD *list_head, int index, int new_value)
 }
 
 
-int get_int_value_at_index(INT_LIST_HEAD *list_head, int index)
+int get_int_value_at(INT_LIST_HEAD *list_head, int index)
 {
     // check the given pointer
     checkNullPointer(list_head);
@@ -577,7 +577,7 @@ long remove_int_if(INT_LIST_HEAD *list_head, bool (*func)(int))
 
     // check all nodes
     for (int i = 0; i < list_head->len; i++)
-        if (func(get_int_value_at_index(list_head, i)))
+        if (func(get_int_value_at(list_head, i)))
         {
             remove_int_node_at(list_head, i, false);
             numberOfRemovedNodes++;
@@ -635,7 +635,7 @@ int *to_int_array(INT_LIST_HEAD *list_head)
 
     // set output array
     for (int i = 0; i < list_head->len; i++)
-        output[i] = get_int_value_at_index(list_head, i);
+        output[i] = get_int_value_at(list_head, i);
 
 
     return output;
@@ -663,7 +663,7 @@ INT_LIST_HEAD *sub_int_list(INT_LIST_HEAD *list_head, int start_index, int end_i
 
     // set new list
     for (int i = start_index; i < end_index; i++)
-        add_int_node(output, new_int_node(get_int_value_at_index(list_head, i)));
+        add_int_node(output, new_int_node(get_int_value_at(list_head, i)));
 
     
     return output;
