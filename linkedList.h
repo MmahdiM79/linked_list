@@ -128,7 +128,7 @@ int get_int_value_at(INT_LIST_HEAD *list_head, int index);
 
 
 /* This function returns the node at given index */
-INT_NODE *get_int_node_at_index(INT_LIST_HEAD *list_head, int index);
+INT_NODE *get_int_node_at(INT_LIST_HEAD *list_head, int index);
 
 
 /* 
