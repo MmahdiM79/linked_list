@@ -233,21 +233,29 @@ INT_NODE *set_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_set, int 
 
 
 
-    // hold the current node
-    INT_NODE *curr = list_head->first;
+    if (list_head->len - index > index)
+    {
+        olderNode = list_head->first;
 
+        // go to the node at the given index
+        for (int curr_index = 0; curr_index < index; curr_index++)
+            olderNode = olderNode->next;
+    }
+    else
+    {
+        olderNode = list_head->last;
 
-    // go to the node at the given index
-    for (int i = 0; i < index; i++)
-        curr = curr->next;
+        for (int curr_index = list_head->len-1; curr_index > index; curr_index--)
+            olderNode = olderNode->previous;
+    }
 
 
     // set pointers to add new node
-    int_node_to_set->next = curr->next;
-    int_node_to_set->previous = curr->previous;
-    curr->next->previous = int_node_to_set;
-    curr->previous->next = int_node_to_set;
-    olderNode = curr;
+    int_node_to_set->next =olderNode->next;
+    int_node_to_set->previous = olderNode->previous;
+    olderNode->next->previous = int_node_to_set;
+    olderNode->previous->next = int_node_to_set;
+    olderNode =olderNode;
 
     // set old node pointers
     olderNode->next = olderNode->previous = NULL;
