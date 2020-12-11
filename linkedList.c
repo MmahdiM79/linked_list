@@ -245,6 +245,7 @@ INT_NODE *set_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_set, int 
     {
         olderNode = list_head->last;
 
+        // go to the node at the given index
         for (int curr_index = list_head->len-1; curr_index > index; curr_index--)
             olderNode = olderNode->previous;
     }
