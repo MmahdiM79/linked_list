@@ -153,13 +153,6 @@ void insert_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_insert, int
         // set curr to the node at the given index
         for (int curr_index = 0; curr_index < index; curr_index++)
             curr = curr->next;
-
-        
-        // insert the give index
-        int_node_to_insert->next = curr;
-        int_node_to_insert->previous = curr->previous;
-        curr->previous->next = int_node_to_insert;
-        curr->previous = int_node_to_insert;
     }
     else 
     {
@@ -169,15 +162,14 @@ void insert_int_node(INT_LIST_HEAD *list_head, INT_NODE *int_node_to_insert, int
         // set curr to the node at the given index
         for (int curr_index = list_head->len-1; curr_index > index; curr_index--)
             curr = curr->previous;
-
-        
-        // insert the give index
-        int_node_to_insert->next = curr;
-        int_node_to_insert->previous = curr->previous;
-        curr->previous->next = int_node_to_insert;
-        curr->previous = int_node_to_insert;
     }
 
+
+    // insert the give index
+    int_node_to_insert->next = curr;
+    int_node_to_insert->previous = curr->previous;
+    curr->previous->next = int_node_to_insert;
+    curr->previous = int_node_to_insert;
 
     // increase the len of the list
     list_head->len++;
