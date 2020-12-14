@@ -662,9 +662,17 @@ INT_LIST_HEAD *sub_int_list(INT_LIST_HEAD *list_head, int start_index, int end_i
     // output list head
     INT_LIST_HEAD *output = new_int_list_head();
 
+    // find the pointer of the first node in sub list
+    INT_NODE *current = list_head->first;
+    for (int i = 0; i < start_index; i++)
+        current = current->next;
+
     // set new list
     for (int i = start_index; i < end_index; i++)
-        add_int_node(output, new_int_node(get_int_value_at(list_head, i)));
+    {
+        add_int_node(output, new_int_node(current->value));
+        current = current->next;
+    }
 
     
     return output;
