@@ -383,11 +383,11 @@ int main(int n, char *args[])
     // see example:
 
     // create a sub list from 'head' linked list
-    h = sub_int_list(head, 0, 3);
+    h = sub_int_list(head, 0, 2);
     // see 'head' linked list
     printf("'head' linked list:  "); print_int_list(head, true);
     // see 'h' linked list
-    printf("a sub list from 'head' linked list. index 0 to 3:  "); print_int_list(h, true);
+    printf("a sub list from 'head' linked list. index 0 to 2:  "); print_int_list(h, true);
     printf("\n\n\n\n\n");
 
 
