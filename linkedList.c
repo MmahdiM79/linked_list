@@ -635,8 +635,12 @@ int *to_int_array(INT_LIST_HEAD *list_head)
     int *output = (int *) malloc((list_head->len)*sizeof(int));
 
     // set output array
+    INT_NODE *current = list_head->first;
     for (int i = 0; i < list_head->len; i++)
-        output[i] = get_int_value_at(list_head, i);
+    {
+        output[i] = current->value;
+        current = current->next;
+    }
 
 
     return output;
