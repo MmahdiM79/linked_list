@@ -615,9 +615,14 @@ bool list_contains_int_value(INT_LIST_HEAD *list_head, int value_to_check)
 
 
     // check values of given linked list
-    for (INT_NODE *curr = list_head->first; curr != NULL; curr = curr->next)
-        if (curr->value == value_to_check)
+    INT_NODE *current = list_head->first;
+    while (current != NULL)
+    {
+        if (current->value == value_to_check)
             return true;
+
+        current = current->next;
+    }
 
     
     return false;
