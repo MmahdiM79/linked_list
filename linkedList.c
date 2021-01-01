@@ -577,13 +577,34 @@ long remove_int_if(INT_LIST_HEAD *list_head, bool (*func)(int))
 
 
     // check all nodes
-    for (int i = 0; i < list_head->len; i++)
-        if (func(get_int_value_at(list_head, i)))
+    iNode current = list_head->first;
+    while (current != NULL)
+    {
+        if (func(current->value))
         {
-            remove_int_node_at(list_head, i, false);
             numberOfRemovedNodes++;
-            i--;
+            
+            if (current == list_head->first)
+            {
+                current = current->next;
+                remove_int_node(list_head, current->previous, true);
+            }
+            else if (current == list_head->last)
+            {
+                remove_int_node(list_head, current, true);
+                current = NULL;
+            }
+            else
+            {
+                current = current->previous;
+                current->next = current->next->next;
+                free(current->next->previous);
+                current->next->previous = current;
+            }
         }
+
+        current = current->next;
+    }
 
 
     return numberOfRemovedNodes;
